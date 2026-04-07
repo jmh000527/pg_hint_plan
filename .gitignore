@@ -13,3 +13,6 @@ regression.*
 /results/
 /tmp_check/
 /RPMS/
+
+# hint_table_replace build artifact
+/hint_replace

@@ -1,0 +1,17 @@
+name: Test hint_table_replace
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: make hint_replace
+      - name: Test
+        run: make hint_replace_test
