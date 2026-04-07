@@ -62,4 +62,12 @@ $(STARBALLS): $(TARSOURCES)
 rpm12: $(STARBALL12)
 	MAKE_ROOT=`pwd` rpmbuild -bb SPECS/pg_hint_plan12.spec
 
+# Standalone hint_table_replace test program
+hint_replace: hint_table_replace.c
+	gcc -Wall -Wextra -g -o hint_replace hint_table_replace.c
 
+hint_replace_test: hint_replace
+	./hint_replace
+
+hint_replace_clean:
+	rm -f hint_replace
